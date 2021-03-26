@@ -1,0 +1,56 @@
+{
+    "variables": {
+      "image_publisher": "Canonical",
+      "image_offer": "UbuntuServer",
+      "image_sku": "18_04-lts-gen2",
+      "image_version" : "18.04.202102240",
+      "vm_size": "Standard_D4_v3",
+      "resource_group" : "southcentralus-rg",
+      "location": "southcentralus",
+      "subscription_id": "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXX",
+      "image_name": "ndv4_v1"
+    },
+    "builders": [
+        {
+            "type": "azure-arm",
+            "subscription_id": "{{user `subscription_id`}}",
+  
+			"image_publisher": "{{user `image_publisher`}}",
+			"image_offer": "{{user `image_offer`}}",
+			"image_sku": "{{user `image_sku`}}",
+            "image_version": "{{user `image_version`}}",
+
+            "managed_image_name" : "{{user `image_name`}}",
+            "managed_image_resource_group_name" :  "{{user `resource_group`}}",
+            "os_type": "Linux",
+            "vm_size":  "{{user `vm_size`}}",
+            "ssh_pty": "true",
+  
+            "location": "{{user `location`}}"
+        }
+    ],
+    "provisioners": [
+        {
+            "type": "file",
+            "sources": [
+                "ubuntu/ubuntu-18.x/ubuntu-18.04-hpc-ndv4/install_01.sh", 
+                "ubuntu/ubuntu-18.x/ubuntu-18.04-hpc-ndv4/setup_00.sh", 
+                "ubuntu/ubuntu-18.x/ubuntu-18.04-hpc-ndv4/setup_01.sh", 
+                "ubuntu/ubuntu-18.x/ubuntu-18.04-hpc-ndv4/setup_02.sh", 
+                "ubuntu/ubuntu-18.x/ubuntu-18.04-hpc-ndv4/setup_03.sh", 
+                "ubuntu/ubuntu-18.x/ubuntu-18.04-hpc-ndv4/lsvmbus"],
+            "destination": "/tmp/"
+        },
+        {
+            "execute_command": "chmod +x {{ .Path }}; {{ .Vars }} sudo -E sh '{{ .Path }}'",
+            "inline": [
+                "chmod +x /tmp/install_01.sh"
+            ],
+            "inline_shebang": "/bin/bash -e",
+            "type": "shell",
+            "skip_clean": true,
+            "expect_disconnect" : true
+        }
+    ]
+}
+  
