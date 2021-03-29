@@ -19,15 +19,17 @@ set -x
 #    --file packer_1.7.0_linux_amd64.zip \
 #    --sas-token $SAS_TOKEN
 
-printenv 
 wget "https://releases.hashicorp.com/packer/1.7.0/packer_1.7.0_linux_amd64.zip"
 unzip packer_1.7.0_linux_amd64.zip
 ls -lt
 pwd
+
+DATE_STAMP=`date '+%Y%m%d-%H%M'`
 
 SUB_ID=`az account show --query id | tr -d '"'`
 ./packer build -var "subscription_id=$SUB_ID" \
   -var "client_secret=$servicePrincipalKey" \
   -var "tenant_id=$tenantId" \
   -var "client_id=$servicePrincipalId" \
+  -var "image_name=ndv4-v1-$DATE_STAMP" \
   build.json
