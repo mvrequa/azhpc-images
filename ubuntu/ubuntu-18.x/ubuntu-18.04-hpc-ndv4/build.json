@@ -16,7 +16,6 @@
     "builders": [
         {
             "type": "azure-arm",
-            "use_azure_cli_auth" : true,
             "subscription_id": "{{user `subscription_id`}}",
             "tenant_id": "{{user `tenant_id`}}",
             "client_id": "{{user `client_id`}}",
