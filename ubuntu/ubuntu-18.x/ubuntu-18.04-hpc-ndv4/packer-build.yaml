@@ -9,6 +9,8 @@ steps:
     workingDirectory: 'ubuntu/ubuntu-18.x/ubuntu-18.04-hpc-ndv4'
     scriptPath: 'ubuntu/ubuntu-18.x/ubuntu-18.04-hpc-ndv4/build.sh'
     scriptType: 'bash'
+    addSpnToEnvironment: True
+    useGlobalConfig: True
 
 - task: PackerBuild@1
   inputs:
