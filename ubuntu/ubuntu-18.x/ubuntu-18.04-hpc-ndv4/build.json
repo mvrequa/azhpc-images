@@ -8,6 +8,9 @@
       "resource_group" : "southcentralus-rg",
       "location": "southcentralus",
       "subscription_id": "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXX",
+      "tenant_id": "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXX",
+      "application_id": "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXX",
+      "client_secret": "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXX",
       "image_name": "ndv4_v1"
     },
     "builders": [
@@ -15,7 +18,10 @@
             "type": "azure-arm",
             "use_azure_cli_auth" : true,
             "subscription_id": "{{user `subscription_id`}}",
-  
+            "tenant_id": "{{user `tenant_id`}}",
+            "client_id": "{{user `client_id`}}",
+            "client_secret": "{{user `client_secret`}}",
+
 			"image_publisher": "{{user `image_publisher`}}",
 			"image_offer": "{{user `image_offer`}}",
 			"image_sku": "{{user `image_sku`}}",
