@@ -21,9 +21,9 @@
             "client_id": "{{user `client_id`}}",
             "client_secret": "{{user `client_secret`}}",
 
-			"image_publisher": "{{user `image_publisher`}}",
-			"image_offer": "{{user `image_offer`}}",
-			"image_sku": "{{user `image_sku`}}",
+            "image_publisher": "{{user `image_publisher`}}",
+            "image_offer": "{{user `image_offer`}}",
+            "image_sku": "{{user `image_sku`}}",
             "image_version": "{{user `image_version`}}",
 
             "managed_image_name" : "{{user `image_name`}}",
