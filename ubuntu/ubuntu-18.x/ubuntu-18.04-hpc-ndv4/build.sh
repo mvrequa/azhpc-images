@@ -4,13 +4,13 @@
 
 
 end=`date -u -d "30 minutes" '+%Y-%m-%dT%H:%MZ'`
-SAS_TOKEN=$(/usr/bin/az storage container generate-sas \
+/usr/bin/az storage container generate-sas \
     --account-name "requawestus2" \
     --name "stor" \
     --permissions acdlrw \
     --auth-mode login \
     --as-user \
-    --expiry $end)
+    --expiry $end
 
 /usr/bin/az storage blob download \
     --account-name "requawestus2" \
