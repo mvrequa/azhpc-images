@@ -5,7 +5,8 @@
 az storage blob download --account-name "requawestus2" \
     --container-name "stor" \
     --name packer_1.7.0_linux_amd64.zip \
-    --file packer_1.7.0_linux_amd64.zip
+    --file packer_1.7.0_linux_amd64.zip \
+    --auth-mode login
  
 unzip packer_1.7.0_linux_amd64.zip
 ls -lt
