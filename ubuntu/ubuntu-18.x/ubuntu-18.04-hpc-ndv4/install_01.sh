@@ -1,6 +1,6 @@
 #!/bin/bash
 set -ex
-
+cd /tmp
 # set properties
 source ./set_properties.sh
 
