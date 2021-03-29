@@ -13,6 +13,7 @@
     "builders": [
         {
             "type": "azure-arm",
+            "use_azure_cli_auth" : true,
             "subscription_id": "{{user `subscription_id`}}",
   
 			"image_publisher": "{{user `image_publisher`}}",

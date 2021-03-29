@@ -1,6 +1,14 @@
 # Build machine image
 
 steps:
+
+- task: AzureCLI@2
+  displayName: Azure CLI
+    azureSubscription: 'azure-cycle-scus'
+    workingDirectory: 'ubuntu/ubuntu-18.x/ubuntu-18.04-hpc-ndv4'
+    scriptPath: './build.sh'
+    scriptType: 'bash'
+
 - task: PackerBuild@1
   inputs:
     templateType: 'builtin' # Options: builtin, custom
