@@ -7,7 +7,7 @@ steps:
   inputs:
     azureSubscription: 'azure-cycle-scus'
     workingDirectory: 'ubuntu/ubuntu-18.x/ubuntu-18.04-hpc-ndv4'
-    scriptPath: './build.sh'
+    scriptPath: 'ubuntu/ubuntu-18.x/ubuntu-18.04-hpc-ndv4/build.sh'
     scriptType: 'bash'
 
 - task: PackerBuild@1
