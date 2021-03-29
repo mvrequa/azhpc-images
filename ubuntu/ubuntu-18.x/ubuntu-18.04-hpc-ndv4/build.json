@@ -9,7 +9,7 @@
       "location": "southcentralus",
       "subscription_id": "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXX",
       "tenant_id": "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXX",
-      "application_id": "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXX",
+      "client_id": "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXX",
       "client_secret": "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXX",
       "image_name": "ndv4_v1"
     },

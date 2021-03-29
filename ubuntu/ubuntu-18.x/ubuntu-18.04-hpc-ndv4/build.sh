@@ -29,5 +29,5 @@ SUB_ID=`az account show --query id | tr -d '"'`
 ./packer build -var "subscription_id=$SUB_ID" \
   -var "client_secret=$servicePrincipalKey" \
   -var "tenant_id=$tenantId" \
-  -var "application_id=$servicePrincipalId" \
+  -var "client_id=$servicePrincipalId" \
   build.json
