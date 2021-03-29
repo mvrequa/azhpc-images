@@ -19,7 +19,7 @@ set -x
 #    --file packer_1.7.0_linux_amd64.zip \
 #    --sas-token $SAS_TOKEN
 
-
+printenv 
 wget "https://releases.hashicorp.com/packer/1.7.0/packer_1.7.0_linux_amd64.zip"
 unzip packer_1.7.0_linux_amd64.zip
 ls -lt
