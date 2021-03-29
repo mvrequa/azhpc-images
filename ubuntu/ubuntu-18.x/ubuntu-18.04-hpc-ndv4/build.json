@@ -5,7 +5,7 @@
       "image_sku": "18_04-lts-gen2",
       "image_version" : "18.04.202102240",
       "vm_size": "Standard_D4s_v3",
-      "resource_group" : "e3786699-5116-4dc9-82c6-a8aab043fb85",
+      "resource_group" : "requa-southcentralus",
       "location": "southcentralus",
       "subscription_id": "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXX",
       "tenant_id": "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXX",
