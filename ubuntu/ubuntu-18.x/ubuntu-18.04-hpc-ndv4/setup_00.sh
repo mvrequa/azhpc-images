@@ -5,6 +5,11 @@
 # - nccl-repo-ubuntu1804-2.7.8-ga-cuda11.0_1-1_amd64.deb
 #   - https://developer.nvidia.com/compute/machine-learning/nccl/secure/v2.7/prod/nccl-repo-ubuntu1804-2.7.8-ga-cuda11.0_1-1_amd64.deb
 
+if [ -f ".setup_00.sh.run" ]; then
+    echo "setup_00.sh previously run."
+fi
+ .setup_00.sh.run
+
 sudo apt-get update
 sudo apt install build-essential -y
 
@@ -85,5 +90,7 @@ EOF
 # Get the kernel patch
 sudo chmod 777 /mnt
 apt install -y linux-image-unsigned-5.4.0-1040-azure/bionic-updates
+
+touch .setup_00.sh.run
 
 sudo reboot
