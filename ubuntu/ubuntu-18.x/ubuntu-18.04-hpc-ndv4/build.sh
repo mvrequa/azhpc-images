@@ -1,5 +1,5 @@
 #!/bin/bash
-
+set -x
 #wget "https://releases.hashicorp.com/packer/1.7.0/packer_1.7.0_linux_amd64.zip"
 
 
@@ -26,5 +26,5 @@ ls -lt
 pwd
 
 SUB_ID=`az account show --query id | tr -d '"'`
-./packer build build.json \
-    -var "subscription_id=$SUB_ID"
+./packer build -var "subscription_id=$SUB_ID" \
+    build.json
